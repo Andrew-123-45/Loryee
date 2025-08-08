@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Gro & Loryee Skin Care | Bidhaa Bora za Kilimo na Afya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --secondary-green: #4caf50;
+            --light-green: #e8f5e9;
+            --dark-green: #1b5e20;
+            --skin-primary: #ff80ab;
+            --skin-secondary: #f8bbd0;
+            --light-skin: #fce4ec;
+            --dark-skin: #c2185b;
+            --text-dark: #333;
+            --text-light: #666;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --white: #ffffff;
+            --box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--light-gray);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-skin {
+            background-color: var(--dark-skin);
+            color: var(--white);
+        }
+        
+        .btn-skin:hover {
+            background-color: #ad1457;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Header & Navigation */
+        .header {
+            background-color: var(--white);
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            font-size: 32px;
+            color: var(--primary-green);
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 22px;
+            color: var(--text-dark);
+        }
+        
+        .logo-text span {
+            color: var(--skin-primary);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 25px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-green);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .social-icons {
+            display: flex;
+            align-items: center;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            color: var(--primary-green);
+            margin-left: 12px;
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 18px;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-green);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        
+        .social-icon.whatsapp:hover {
+            background-color: #25D366;
+            color: var(--white);
+        }
+        
+        .social-icon.facebook:hover {
+            background-color: #3b5998;
+            color: var(--white);
+        }
+        
+        .social-icon.instagram:hover {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: var(--white);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary-green);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('main.jpg');
+            background-size: contain;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-green);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .skin-section .section-title:after {
+            background: var(--dark-skin);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        
+        /* Agriculture Section */
+        .agriculture-section {
+            background-color: var(--light-green);
+        }
+        
+        .product-highlight {
+            background: linear-gradient(to right, var(--primary-green), var(--dark-green));
+            color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .product-highlight h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .product-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .product-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .product-info {
+            flex: 1;
+        }
+        
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .feature-badge {
+            background-color:whitesmoke ;
+            color: var(--dark-green);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            background-color: var(--white);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--primary-green);
+            text-align: center;
+            padding: 30px 0 20px;
+        }
+        
+        .skin-section .benefit-icon {
+            color: var(--dark-skin);
+        }
+        
+        .benefit-content {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .benefit-content h3 {
+            margin-bottom: 15px;
+            color: var(--primary-green);
+        }
+        
+        .skin-section .benefit-content h3 {
+            color: var(--dark-skin);
+        }
+        
+        /* How to Use Section */
+        .how-to-section {
+            background-color: var(--light-gray);
+        }
+        
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .step-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-green);
+            color: var(--white);
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .skin-section .step-number {
+            background: var(--dark-skin);
+        }
+        
+        .specs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .spec-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .spec-card h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary-green);
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 10px;
+        }
+        
+        .spec-list {
+            list-style-type: none;
+        }
+        
+        .spec-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .spec-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Video Section */
+        .video-section {
+            background-color: var(--light-green);
+        }
+        
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Skin Care Section */
+        .skin-section {
+            background-color: var(--light-skin);
+        }
+        
+        .skin-highlight {
+            background: linear-gradient(to right, var(--skin-primary), var(--skin-primary));
+            color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .skin-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .skin-feature {
+            background-color:whitesmoke;
+            color: var(--dark-skin);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            background-color: var(--white);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            height: 250px;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            background-color: var(--light-gray);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: " ";
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 80px;
+            color: var(--light-gray);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            margin-top: 20px;
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+            color: var(--primary-green);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: var(--white);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info {
+            padding: 20px;
+        }
+        
+        .contact-info h3 {
+            color: var(--white);
+            margin-bottom: 30px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+        
+        .contact-text {
+            flex: 1;
+        }
+        
+        .contact-form {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 4px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-green);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #222;
+            color: #ddd;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h4:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary-green);
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            max-width: 300px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            color: var(--white);
+            border-radius: 50%;
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .section-subtitles{
+        	color:white;
+        }
+        
+        .footer-social a:hover {
+            background: var(--primary-green);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+            color: #999;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 280px;
+            height: 100vh;
+            background: var(--white);
+            z-index: 1001;
+            padding: 20px;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            overflow-y: auto;
+        }
+        
+        .mobile-menu.active {
+            left: 0;
+        }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .close-menu {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+        
+        .mobile-nav {
+            list-style: none;
+        }
+        
+        .mobile-nav li {
+            margin-bottom: 15px;
+        }
+        
+        .mobile-nav a {
+            display: block;
+            padding: 12px 15px;
+            background: var(--light-gray);
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .mobile-nav a:hover {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: none;
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+            
+            .product-content {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu, .social-icons {
+                display: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <div class="logo-text">LORYEE_Kilimo bora<span> &  Afya ya ngozi</span></div>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#super-gro" class="nav-link">Super Gro</a></li>
+                    <li class="nav-item"><a href="#loryee" class="nav-link">Loryee Skin Care</a></li>
+                    <li class="nav-item"><a href="#benefits" class="nav-link">Faida</a></li>
+                    <li class="nav-item"><a href="#gallery" class="nav-link">Picha</a></li>
+                    <li class="nav-item"><a href="#videos" class="nav-link">Video</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Wasiliana</a></li>
+                </ul>
+            </nav>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/1Csji2Sw7C/" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/loryee_neoproducts?igsh=MW13ZXVvMHI1MnFrbw==" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/255618692537" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo-text">Super Gro & Loryee</div>
+            <button class="close-menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav">
+            <li><a href="#super-gro">Super Gro</a></li>
+            <li><a href="#loryee">Loryee Skin Care</a></li>
+            <li><a href="#benefits">Faida</a></li>
+            <li><a href="#gallery">Picha</a></li>
+            <li><a href="#videos">Video</a></li>
+            <li><a href="#contact">Wasiliana</a></li>
+        </ul>
+    </div>
+    <div class="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Kwa Kilimo Bora na Afya ya Ngozi</h1>
+                <p>Super Gro Original - Suluhisho kwa Wakulima & Loryee Skin Care - Huduma Bora za Afya na Urembo</p>
+                <div class="hero-buttons">
+                    <a href="#super-gro" class="btn btn-primary">Jifunze Kuhusu Super Gro</a>
+                    <a href="#loryee" class="btn btn-skin">Bidhaa za Loryee Skin Care</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agriculture Section -->
+    <section id="super-gro" class="section agriculture-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>SUPER GRO ORIGINAL</h2>
+            </div>
+            <p class="section-subtitle">Mapinduzi kwenye kilimo cha faida na mavuno mengi</p>
+            
+            <div class="product-highlight">
+                <h3>NUNUA BIDHAA ZETU KUJIPATIA OFA KABAMBE</h3>
+                <p>Bei maalum kwa wateja wapya wa Super Gro. Nunua sasa kabla stock haijaisha!</p>
+                <ul>
+                    <li>Inakuza kila aina ya mmea</li>
+                    <li>Ina virutubisho vyote 10 muhimu</li>
+                    <li>Inaongeza mavuno maradufu</li>
+                    <li>Inalinda mimea dhidi ya magonjwa</li>
+                </ul>
+            </div>
+            
+            <div class="product-content">
+                <div class="product-image">
+                    <img src="bidhaa2.jpg" alt="Super Gro Product">
+                </div>
+                <div class="product-info">
+                    <h3>Kuhusu Super Gro</h3>
+                    <p>Super Gro ni bidhaa ya kilimo inayotumika kama kiambatishi cha mbolea na dawa za mimea. Imetengenezwa na Neolife International na inajulikana kwa kuimarisha ukuaji wa mimea na kuongeza mavuno.</p>
+                    <p>Bidhaa hii imekuwa maarufu hasa Afrika Mashariki kwani imewasaidia wakulima wengi kuongeza mazao na kupunguza gharama za pembejeo hasa madawa na mbolea.</p>
+                    <p>Super Gro ni suluhisho bora kwa changamoto zote za wakulima kama vile ukame, mazao duni, wadudu na magonjwa, udongo kukauka, na gharama za pembejeo za kilimo.</p>
+                </div>
+            </div>
+            
+            <h3 class="text-center">Mimea Inayofaa kwa Super Gro</h3>
+            <div class="features-grid">
+                <div class="feature-badge">Mahindi</div>
+                <div class="feature-badge">Mpunga</div>
+                <div class="feature-badge">Nyanya</div>
+                <div class="feature-badge">Viazi</div>
+                <div class="feature-badge">Broccoli</div>
+                <div class="feature-badge">Strawberry</div>
+                <div class="feature-badge">Machungwa</div>
+                <div class="feature-badge">Ndizi</div>
+                <div class="feature-badge">Sukuma Wiki</div>
+                <div class="feature-badge">Embe</div>
+                <div class="feature-badge">Zabibu</div>
+                <div class="feature-badge">Vitunguu</div>
+                <div class="feature-badge">Maharage</div>
+                <div class="feature-badge">Kunde</div>
+                <div class="feature-badge">Hoho</div>
+                <div class="feature-badge">Maua</div>
+                <div class="feature-badge">Mitiki, Minazi</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="section benefits-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Faida za Super Gro</h2>
+            </div>
+            <p class="section-subtitle">Kwa nini wakulima wanapendelea Super Gro?</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Kuongeza Ufanisi wa Mbolea</h3>
+                        <p>Super Gro hufanya kazi kama sticker au spreader, kuhakikisha mbolea na dawa zinagandamana vizuri kwenye mimea. Hii huongeza uwezo wa mimea kunyonya virutubisho.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Kuimarisha Unyonyaji wa Maji</h3>
+                        <p>Super Gro ni wetting agent, inayosaidia maji kupenya kwenye udongo kwa haraka na kusambaa vizuri. Hii hupunguza upotevu wa maji na kuhakikisha mimea inapata unyevu wa kutosha.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Kupunguza Gharama</h3>
+                        <p>Kwa kuongeza ufanisi wa mbolea na dawa, Super Gro hupunguza kiasi cha dawa au mbolea kinachohitajika, hivyo kuokoa gharama za uzalishaji hadi nusu.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Kupambana na Magonjwa</h3>
+                        <p>Kwa kuwa Super Gro husaidia mimea kuwa na afya bora, mimea huwa na uwezo wa kupambana na magonjwa na wadudu kwa ufanisi zaidi.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Haina Madhara kwa Mazingira</h3>
+                        <p>Super Gro ni rafiki kwa mazingira kwa sababu haina kemikali zenye sumu. Pia haina athari mbaya kwa maji, udongo, au wadudu wa manufaa kama nyuki.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Kuongeza Uzalishaji</h3>
+                        <p>Wakulima wanaotumia Super Gro huongeza mavuno yao hadi mara 2 au zaidi. Mazao pia huwa makubwa, mazito na yenye ladha bora.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use Section -->
+    <section class="section how-to-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Jinsi ya Kutumia Super Gro</h2>
+            </div>
+            <p class="section-subtitle">Dira kwa matumizi bora na yenye ufanisi</p>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Kupandia</h3>
+                    <p>Loweka mbegu kwenye mchanganyiko wa 1Cc super gro na maji Lita moja kwa muda wa takriban masaa 6</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Kukuzia</h3>
+                    <p>Baada ya kupanda na mmea kutokeza (kama urefu wa futi 1), puliza kila baada ya wiki 1 (kiangazi) au wiki 2 (masika)</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Kuzuia Wadudu</h3>
+                    <p>Changanya pamoja na dawa za kuuwa wadudu. Itasaidia dawa zishike kwenye mimea na wadudu kutorudi tena</p>
+                </div>
+            </div>
+            
+            <div class="specs-container">
+                <div class="spec-card">
+                    <h3>Vipimo Sahihi</h3>
+                    <ul class="spec-list">
+                        <li>1cc/ml ya Super Gro + 1Lita ya maji</li>
+                        <li>10cc za Super Gro + 10Lita za maji</li>
+                        <li>Dumu la Lita 5 - Eneo la Hekari 5</li>
+                        <li>Lita 1 ya Super Gro - Hekari 1</li>
+                    </ul>
+                </div>
+                
+                <div class="spec-card">
+                    <h3>Virutubisho Muhimu</h3>
+                    <ul class="spec-list">
+                        <li>Nitrogen (N) 7.5%</li>
+                        <li>Phosphorus (P) 4.5%</li>
+                        <li>Potassium (K) 3.3%</li>
+                        <li>Zink (Zn) 0.1%</li>
+                        <li>Calcium (Ca) 0.8%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="videos" class="section video-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Video Kuhusu Super Gro</h2>
+            </div>
+            <p class="section-subtitle">Jifunze zaidi kupitia video zetu</p>
+            
+            <div class="videos-grid">
+                <div class="video-container">
+                    <iframe src="vid4.mp4" title="Super Gro Introduction" allowfullscreen></iframe>
+                </div>
+               
+                <div class="video-container">
+                    <iframe src="vid5.mp4" title="How to Use Super Gro" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skin Care Section -->
+    <section id="loryee" class="section skin-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Loryee Skin Care and Health</h2>
+            </div>
+            <p class="section-subtitle">Afya yako. Ngozi yako. Urembo wako.</p>
+            
+            <div class="skin-highlight">
+                <h3>Karibu Loryee Skin Care and Health</h3>
+                <p>Tunajivunia kutoa huduma bora za afya na urembo kwa wote wanaothamini ngozi yao na afya ya mwili kwa ujumla.</p>
+            </div>
+            
+            <div class="product-content">
+                <div class="product-info">
+                    <h3>Kuhusu Loryee Skin Care</h3>
+                    <p>Hapa, tunakuletea bidhaa asilia zinazolenga kuboresha afya yako ya ndani na nje. Tunajali ngozi yako kama wewe unavyoijali - ndiyo maana tunakupa suluhisho la chunusi, madoa, sugu, na ngozi kavu.</p>
+                    <p>Pia tunakupa bidhaa bora kwa ajili ya kuimarisha kinga ya mwili, macho, nywele, na lishe bora. Huduma zetu ni salama, halali na zenye matokeo ya kweli. Bidhaa zetu ni zenye viwango vya kimataifa.</p>
+                    <p>Urembo wa kweli huanzia ndani - nasi tupo kukuongoza hadi kwenye toleo bora la wewe mwenyewe!</p>
+                </div>
+                <div class="product-image">
+                    <img src="bidhaa11.jpg" alt="Loryee Skin Care">
+                </div>
+            </div>
+            
+            <h3 class="text-center">Huduma Zetu</h3>
+            <div class="skin-features">
+                <div class="skin-feature">Tiba ya Chunusi</div>
+                <div class="skin-feature">Uondoa Madoa</div>
+                <div class="skin-feature">Tiba ya Sugu</div>
+                <div class="skin-feature">Ngozi Kavu</div>
+                <div class="skin-feature">Kuimarisha Kinga ya Mwili</div>
+                <div class="skin-feature">Bidhaa za Macho</div>
+                <div class="skin-feature">Bidhaa za Nywele</div>
+                <div class="skin-feature">Lishe Bora</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="loryee" class="section skin-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Video Kuhusu Skin  Care</h2>
+            </div>
+            <p class="section-subtitle">Jifunze zaidi kupitia video zetu</p>
+            
+            <div class="videos-grid">
+                <div class="video-container">
+                    <iframe src="vid1.mp4" title="Super Gro Introduction" allowfullscreen></iframe>
+                </div>
+               
+                <div class="video-container">
+                    <iframe src="vid2.mp4" title="Super Gro Introduction" allowfullscreen ></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="vid3.mp4" title="How to Use Super Gro" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Picha za Bidhaa za Kilimo na Matokeo</h2>
+            </div>
+            <p class="section-subtitle">Angalia matokeo ya kweli ya bidhaa zetu</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="ovacado.jpg" alt="Healthy Crops">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Super Gro Application">
+                </div>
+                <div class="gallery-item">
+                    <img src="bidhaa5.jpg" alt="Abundant Harvest">
+                </div>
+                <div class="gallery-item">
+                    <img src="mihogo.jpg" alt="Loryee Products">
+                </div>
+            </div>
+        </div>
+    </section>
+     <section id="gallery" class="section gallery-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Picha za Bidhaa za Ngozi na Matokeo</h2>
+            </div>
+            <p class="section-subtitle">Angalia matokeo ya kweli ya bidhaa zetu</p>
+            
+            <div class="gallery-grid"></div>
+                <div class="gallery-item">
+                    <img src="bidhaa8.jpg" alt="Skin Care Results">
+                </div>
+                 <div class="gallery-item">
+                    <img src="bidhaa3.jpg" alt="Skin Care Results">
+                </div>
+                 <div class="gallery-item">
+                    <img src="bidhaa6.jpg" alt="Skin Care Results">
+                </div>
+                <div class="gallery-item">
+                    <img src="bidhaa9.jpg" alt="Healthy Skin">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Wasiliana Nasi</h2>
+            </div>
+            <p class="section-subtitles">Tutumie ujumbe wako kupitia fomu yetu au tuwasiliane moja kwa moja  kwa nambari zetu</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Maelezo Ya Mawasiliano</h3>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Simu</h4>
+                            <p>0618 692 537</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>WhatsApp</h4>
+                            <p>0618 692 537</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Barua Pepe</h4>
+                            <p>grolymatambi@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Mahali</h4>
+                            <p>Tunafikisha bidhaa nchi nzima</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Tuma Ujumbe</h3>
+                    <form action="https://formsubmit.co/glorymatambi@gmail.com" method="POST">
+                        <div class="form-group">
+                            <label for="name">Jina Kamili</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Namba ya Simu</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Barua Pepe</label>
+                            <input type="email" id="email" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interest">Nina Hamu Ya:</label>
+                            <select id="interest" class="form-control">
+                                <option value="">Chagua Bidhaa...</option>
+                                <option value="super-gro">Super Gro Original</option>
+                                <option value="skin-care">Bidhaa za Loryee Skin Care</option>
+                                <option value="both">Zote mbili</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+    <label for="tarehe">Chagua Tarehe</label>
+    <input type="date" id="tarehe" class="form-control">
+</div>
+                        <div class="form-group">
+    <label for="file">Chagua Faili</label>
+    <input type="file" id="file" class="form-control">
+</div>
+                        
+                        <div class="form-group">
+                            <label for="message">Ujumbe</label>
+                            <textarea id="message" class="form-control"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Tuma Ujumbe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Kuhusu Sisi</h4>
+                    <p>Super Gro & Loryee Skin Care inatoa bidhaa bora za kilimo na huduma bora za afya na urembo. Tunajivunia kuwapa wateja wetu uzoefu bora na matokeo thabiti.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/share/1Csji2Sw7C/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/loryee_neoproducts?igsh=MW13ZXVvMHI1MnFrbw=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/255618692537"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Viungo Muhimu</h4>
+                    <ul class="footer-links">
+                        <li><a href="#super-gro">Kuhusu Super Gro</a></li>
+                        <li><a href="#loryee">Loryee Skin Care</a></li>
+                        <li><a href="#benefits">Faida za Bidhaa</a></li>
+                        <li><a href="#gallery">Picha</a></li>
+                        <li><a href="#videos">Video</a></li>
+                        <li><a href="#contact">Wasiliana Nasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Bidhaa</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Super Gro Original</a></li>
+                        <li><a href="#">Bidhaa za Kilimo</a></li>
+                        <li><a href="#">Mbolea bora</a></li>
+                        <li><a href="#">Bidhaa za Urembo</a></li>
+                        <li><a href="#">Bidhaa za Lishe</a></li>
+                        <li><a href="#">Bidhaa za Nywele</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Wasiliana</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone-alt me-2"></i> 0618 692 537</li>
+                        <li><i class="fab fa-whatsapp me-2"></i> 0618 692 537</li>
+                        <li><i class="fas fa-envelope me-2"></i> grolymatambi@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Tunafikisha bidhaa nchi nzima</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Super Gro & Loryee Skin Care. Designed by +255 743 140 476 in <i class="fa fa-heart"></i> with Loryee.com. Haki zote zimehifadhiwa.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const closeMenu = document.querySelector('.close-menu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const overlay = document.querySelector('.overlay');
+        
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        overlay.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.remove('active');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+        
+        // Active link highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
